@@ -1,0 +1,30 @@
+name: Test
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Test on Node
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          cache: "yarn"
+
+      - name: Install Node dependencies
+        run: yarn --frozen-lockfile
+
+      - run: yarn lint
+      - run: yarn tsc
+      - run: yarn build

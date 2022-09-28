@@ -1,6 +1,8 @@
 import * as d3 from "d3";
 
 export function barChart(X: Int32Array, Y: string[]) {
+  // Here we use an artray of indexes as data for D3 so we can process columnar data more easily
+  // but you could also directly pass an array of objects to D3.
   const I = d3.range(X.length);
 
   const margin = { top: 30, right: 0, bottom: 30, left: 130 };
@@ -20,6 +22,7 @@ export function barChart(X: Int32Array, Y: string[]) {
   const xAxis = d3.axisTop(xScale).ticks(width / 80);
   const yAxis = d3.axisLeft(yScale).tickSizeOuter(0);
 
+  // Create the SVG element for the chart.
   const svg = d3
     .create("svg")
     .attr("width", width)
@@ -27,7 +30,7 @@ export function barChart(X: Int32Array, Y: string[]) {
     .attr("viewBox", [0, 0, width, height])
     .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
 
-  // add the x axis
+  // Add the x axis
   svg
     .append("g")
     .attr("transform", `translate(0,${margin.top})`)
@@ -50,7 +53,7 @@ export function barChart(X: Int32Array, Y: string[]) {
         .text("Count →")
     );
 
-  // add the bars
+  // Add the bars
   svg
     .append("g")
     .attr("fill", "steelblue")
@@ -62,7 +65,7 @@ export function barChart(X: Int32Array, Y: string[]) {
     .attr("width", (i) => xScale(X[i]) - xScale(0))
     .attr("height", yScale.bandwidth());
 
-  // add text
+  // Add text
   svg
     .append("g")
     .attr("fill", "white")
@@ -85,7 +88,7 @@ export function barChart(X: Int32Array, Y: string[]) {
         .attr("text-anchor", "start")
     );
 
-  // add the y axis
+  // Add the y axis
   svg.append("g").attr("transform", `translate(${margin.left},0)`).call(yAxis);
 
   return svg.node()!;

@@ -2,25 +2,35 @@ name: Deploy
 
 on:
   push:
-    branches:
-      - main
+    branches: ["main"]
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
-  build-and-deploy:
-    concurrency: ci-${{ github.ref }}
-
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
 
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
           cache: "yarn"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
 
       - name: Install Node dependencies
         run: yarn --frozen-lockfile
@@ -28,7 +38,11 @@ jobs:
       - name:
         run: yarn build
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
         with:
-          folder: dist
+          path: "dist"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v1

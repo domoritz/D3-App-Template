@@ -1,5 +1,5 @@
-import './style.css'
-import {barChart} from './bar-chart'
+import "./style.css";
+import { barChart } from "./bar-chart";
 import { Int32, Table, Utf8 } from "apache-arrow";
 import { db } from "./duckdb";
 
@@ -19,4 +19,4 @@ const Y = data
 
 const chart = barChart(X, Y);
 
-document.querySelector("#app")!.appendChild(chart)
+document.querySelector("#app")!.appendChild(chart);

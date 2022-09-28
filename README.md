@@ -11,5 +11,5 @@ yarn dev
 
 ## Notes
 
-* Uses [Vite](https://vitejs.dev/)
-* Bootstrapped with `yarn create vite app --template vanilla-ts`
+- Uses [Vite](https://vitejs.dev/)
+- Bootstrapped with `yarn create vite app --template vanilla-ts`

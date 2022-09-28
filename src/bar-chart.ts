@@ -28,19 +28,27 @@ export function barChart(X: Int32Array, Y: string[]) {
     .attr("style", "max-width: 100%; height: auto; height: intrinsic;");
 
   // add the x axis
-  svg.append("g")
-  .attr("transform", `translate(0,${margin.top})`)
-  .call(xAxis)
-  // add gridlines
-  .call(g => g.selectAll(".tick line").clone()
-      .attr("y2", height - margin.top - margin.bottom)
-      .attr("stroke-opacity", 0.1))
-  .call(g => g.append("text")
-      .attr("x", width - margin.right)
-      .attr("y", -22)
-      .attr("fill", "black")
-      .attr("text-anchor", "end")
-      .text("Count →"));
+  svg
+    .append("g")
+    .attr("transform", `translate(0,${margin.top})`)
+    .call(xAxis)
+    // add gridlines
+    .call((g) =>
+      g
+        .selectAll(".tick line")
+        .clone()
+        .attr("y2", height - margin.top - margin.bottom)
+        .attr("stroke-opacity", 0.1)
+    )
+    .call((g) =>
+      g
+        .append("text")
+        .attr("x", width - margin.right)
+        .attr("y", -22)
+        .attr("fill", "black")
+        .attr("text-anchor", "end")
+        .text("Count →")
+    );
 
   // add the bars
   svg

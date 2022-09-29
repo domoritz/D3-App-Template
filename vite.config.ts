@@ -3,5 +3,5 @@ export default {
     target: ["chrome100", "safari15", "firefox100"],
   },
   // Change this to your repo name
-  base: "D3-App-Template",
+  base: "/D3-App-Template/",
 };

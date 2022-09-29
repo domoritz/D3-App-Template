@@ -20,6 +20,7 @@ You can fix a lot of issues autoamtically with `yarn format`.
 ## Deployment
 
 When you push to GitHub, the app automatically deploys to GitHub Pages. See `deploy.yml` for details.
+Make sure to update the `base` property in `vit.config.ts` to match your repo name.
 
 ## Notes
 

@@ -5,7 +5,7 @@ export function barChart(X: Int32Array, Y: string[]) {
   // but you could also directly pass an array of objects to D3.
   const I = d3.range(X.length);
 
-  const margin = { top: 30, right: 0, bottom: 30, left: 130 };
+  const margin = { top: 30, right: 0, bottom: 30, left: 50 };
   const width = 600;
   const height = 300;
 

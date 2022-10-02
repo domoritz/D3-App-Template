@@ -4,7 +4,7 @@ import { Int32, Table, Utf8 } from "apache-arrow";
 import { db } from "./duckdb";
 import parquet from "./weather.parquet?url";
 
-// Load a Parquet file and regioster it with DuckDB. We could request the data from a URL instead.
+// Load a Parquet file and register it with DuckDB. We could request the data from a URL instead.
 const res = await fetch(parquet);
 await db.registerFileBuffer(
   "weather.parquet",

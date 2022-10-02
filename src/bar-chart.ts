@@ -1,7 +1,7 @@
 import * as d3 from "d3";
 
 export function barChart(X: Int32Array, Y: string[]) {
-  // Here we use an artray of indexes as data for D3 so we can process columnar data more easily
+  // Here we use an array of indexes as data for D3 so we can process columnar data more easily
   // but you could also directly pass an array of objects to D3.
   const I = d3.range(X.length);
 

@@ -6,7 +6,7 @@ export function barChart(X: Int32Array, Y: string[]) {
   const I = d3.range(X.length);
 
   const margin = { top: 30, right: 0, bottom: 30, left: 50 };
-  const width = 600;
+  const width = document.body.clientWidth;
   const height = 300;
 
   const xRange = [margin.left, width - margin.right];

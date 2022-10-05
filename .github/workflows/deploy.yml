@@ -26,17 +26,15 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v3
-        with:
-          cache: "yarn"
 
       - name: Setup Pages
         uses: actions/configure-pages@v2
 
       - name: Install Node dependencies
-        run: yarn --frozen-lockfile
+        run: npm ci
 
       - name:
-        run: yarn build
+        run: npm run build
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1

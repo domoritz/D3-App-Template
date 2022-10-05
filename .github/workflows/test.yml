@@ -19,12 +19,10 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v3
-        with:
-          cache: "yarn"
 
       - name: Install Node dependencies
-        run: yarn --frozen-lockfile
+        run: npm ci
 
-      - run: yarn lint
-      - run: yarn tsc
-      - run: yarn build
+      - run: npm run lint
+      - run: npm run tsc
+      - run: npm run build

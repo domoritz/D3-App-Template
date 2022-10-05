@@ -26,7 +26,7 @@ When you push to GitHub, the app automatically deploys to GitHub Pages. As an ex
 ## Notes
 
 - Uses [Vite](https://vitejs.dev/)
-- Bootstrapped with `npm run create vite app --template vanilla-ts`
+- Bootstrapped with `npx create vite app --template vanilla-ts`
 - Uses [D3](https://d3js.org/)
 - Built with [TypeScript](https://www.typescriptlang.org/)
-- Support [DuckDB-wasm](https://github.com/duckdb/duckdb-wasm)
+- Supports [DuckDB-wasm](https://github.com/duckdb/duckdb-wasm)

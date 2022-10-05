@@ -50,9 +50,8 @@ for (const location of locations) {
   select.append("option").text(location.location);
 }
 
-select.on("change", async () => {
+select.on("change", () => {
   const location = select.property("value");
-
   update(location);
 });
 

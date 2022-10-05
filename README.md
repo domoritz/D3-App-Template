@@ -21,7 +21,7 @@ You can fix a lot of issues autoamtically with `npm run format`.
 
 ## Deployment
 
-When you push to GitHub, the app automatically deploys to GitHub Pages. As an example, this template repositroy is deployed at [domoritz.github.io/D3-App-Template](https://domoritz.github.io/D3-App-Template/). See `deploy.yml` for details. Make sure to update the `base` property in `vit.config.ts` to match your repo name.
+When you push to GitHub, the app automatically deploys to GitHub Pages. As an example, this template repository is deployed at [domoritz.github.io/D3-App-Template](https://domoritz.github.io/D3-App-Template/). See `deploy.yml` for details. Make sure to update the `base` property in `vite.config.ts` to match your repo name.
 
 ## Notes
 

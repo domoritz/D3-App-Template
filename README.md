@@ -4,10 +4,15 @@ A template for an interactive web application with D3.
 
 ## Launch the app
 
-Install [node](https://nodejs.org/en/).
+Install [node](https://nodejs.org/en/) and then install the dependencies.
 
 ```bash
 npm install
+```
+
+Then you can run the app.
+
+```bash
 npm run dev
 ```
 

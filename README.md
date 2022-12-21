@@ -20,9 +20,9 @@ This launches the app in developer mode. To run the app in production mode, run 
 
 ## Code style
 
-We recommed using VSCode for development. You can run `npm run lint` to check for linting errors.
+We recommed using [VSCode](https://code.visualstudio.com) for development. You can run `npm run lint` to check for linting errors.
 Note that these tests automatically run when you comit your code to GitHub. See `test.yml` for details.
-You can fix a lot of issues autoamtically with `npm run format`.
+You can fix a lot of issues autoamtically with `npm run format`. If you see TypeScript errors that you don't want to fix, you can silence them with a comment `// @ts-ignore`.
 
 ## Deployment
 
